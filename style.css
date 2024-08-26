@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #FF0099, #FFCC00); /* Neon Pink to Neon Yellow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    animation: zoomBackground 20s ease-in-out infinite;
+}
+
+@keyframes zoomBackground {
+    0% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 110%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    max-width: 90%;
+    margin: auto;
+    box-sizing: border-box;
+    z-index: 10;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added box-shadow transition */
+    animation: fadeIn 1s ease-out; /* Added fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.container:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.thought-box {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+button {
+    background-color: #ff007f;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #ff4f9f;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+button:active {
+    background-color: #e60073;
+    transform: scale(0.95); /* Slightly shrink on active */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 0, 127, 0.4);
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .container {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .thought-box {
+        font-size: 1.2rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+    .container {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+    .thought-box {
+        font-size: 1.4rem;
+    }
+
+    button {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 993px) {
+    .container {
+        padding: 2rem;
+        width: 80%;
+    }
+
+    .thought-box {
+        font-size: 1.6rem;
+    }
+
+    button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2rem;
+    display: none; /* Hidden by default */
+}
